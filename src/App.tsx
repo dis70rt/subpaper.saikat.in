@@ -1,12 +1,15 @@
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import { useRef } from 'react';
+import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
+import { useRef, lazy, Suspense } from 'react';
 import Hero from './components/Hero';
-import Features from './components/Features';
-import Details from './components/Details';
-import Testimonials from './components/Testimonials';
-import Footer from './components/Footer';
 import Navbar from './components/Navbar';
-import Trailer from './components/Trailer';
+
+// Lazy loaded beneath-the-fold components
+const Trailer = lazy(() => import('./components/Trailer'));
+const Features = lazy(() => import('./components/Features'));
+const Details = lazy(() => import('./components/Details'));
+const Testimonials = lazy(() => import('./components/Testimonials'));
+const Footer = lazy(() => import('./components/Footer'));
+const AmbientBackground = lazy(() => import('./components/AmbientBackground'));
 
 function App() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -26,6 +29,10 @@ function App() {
 
   return (
     <div className="App" ref={containerRef}>
+      <Suspense fallback={null}>
+        <AmbientBackground />
+      </Suspense>
+      
       {/* Fixed ambient light leaks – parallax on scroll */}
       <motion.div 
         className="ambient-glow ambient-glow-1" 
@@ -42,11 +49,14 @@ function App() {
 
       <Navbar />
       <Hero />
-      <Trailer />
-      <Features />
-      <Details />
-      <Testimonials />
-      <Footer />
+      
+      <Suspense fallback={<div style={{ minHeight: '100vh' }} />}>
+        <Trailer />
+        <Features />
+        <Details />
+        <Testimonials />
+        <Footer />
+      </Suspense>
     </div>
   );
 }

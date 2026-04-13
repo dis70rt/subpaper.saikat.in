@@ -34,6 +34,7 @@ const Trailer = () => {
               src="https://www.youtube.com/embed/RbSOpzlgjjk?controls=1&rel=0&modestbranding=1" 
               title="SubPaper Trailer" 
               frameBorder="0" 
+              loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
               allowFullScreen
             ></iframe>
