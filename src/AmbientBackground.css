@@ -4,7 +4,8 @@
   width: 100vw;
   height: 100vh;
   pointer-events: none;
-  z-index: -2; /* Sit behind the --ambient-glow gradients and application */
+  z-index: -2;
+  /* Sit behind the --ambient-glow gradients and application */
   overflow: hidden;
   background-color: var(--bg-dark);
 }
@@ -14,25 +15,137 @@
   border-radius: 24px;
   transform-style: preserve-3d;
   will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
   object-fit: cover;
   box-shadow: 0 0 30px rgba(180, 144, 245, 0.15);
 }
 
-/* Base scaling across layers - reducing size globally and fixing blur */
-.l4 { width: 140px; height: 300px; filter: blur(12px); opacity: 0.05; }
-.l3 { width: 180px; height: 380px; filter: blur(8px); opacity: 0.08; }
-.l2 { width: 220px; height: 460px; filter: blur(4px); opacity: 0.12; }
-.l1 { width: 260px; height: 550px; filter: blur(2px); opacity: 0.18; }
+/* Base scaling across layers - restored to very large sizes to build a dense floating gallery */
+.l4 {
+  width: 160px;
+  height: 350px;
+  filter: blur(12px);
+  opacity: 0.10;
+}
 
-/* Position the 8 images in scattered space */
-.img-a { top: -5%; left: 5%; transform: rotate(-15deg); }
-.img-b { bottom: 10%; right: 10%; transform: rotate(18deg); }
-.img-c { top: 20%; right: -2%; transform: rotate(8deg); }
-.img-d { bottom: 5%; left: 15%; transform: rotate(-22deg); }
-.img-e { top: -10%; right: 25%; transform: rotate(-6deg); }
-.img-f { bottom: -15%; left: 35%; transform: rotate(12deg); }
-.img-g { top: 35%; left: -8%; transform: rotate(-18deg); }
-.img-h { top: 45%; right: 5%; transform: rotate(24deg); }
+.l3 {
+  width: 200px;
+  height: 420px;
+  filter: blur(8px);
+  opacity: 0.12;
+}
+
+.l2 {
+  width: 240px;
+  height: 500px;
+  filter: blur(4px);
+  opacity: 0.16;
+}
+
+.l1 {
+  width: 300px;
+  height: 600px;
+  filter: blur(2px);
+  opacity: 0.22;
+}
+
+/* Position the 16 images in scattered space */
+.img-a {
+  top: -5%;
+  left: 5%;
+  transform: rotate(-15deg);
+}
+
+.img-b {
+  bottom: 10%;
+  right: 10%;
+  transform: rotate(18deg);
+}
+
+.img-c {
+  top: 20%;
+  right: -2%;
+  transform: rotate(8deg);
+}
+
+.img-d {
+  bottom: 5%;
+  left: 15%;
+  transform: rotate(-22deg);
+}
+
+.img-e {
+  top: -10%;
+  right: 25%;
+  transform: rotate(-6deg);
+}
+
+.img-f {
+  bottom: -15%;
+  left: 35%;
+  transform: rotate(12deg);
+}
+
+.img-g {
+  top: 35%;
+  left: -8%;
+  transform: rotate(-18deg);
+}
+
+.img-h {
+  top: 45%;
+  right: 5%;
+  transform: rotate(24deg);
+}
+
+.img-i {
+  top: -12%;
+  left: 65%;
+  transform: rotate(-32deg);
+}
+
+.img-j {
+  bottom: -5%;
+  right: -5%;
+  transform: rotate(45deg);
+}
+
+.img-k {
+  top: 50%;
+  right: 15%;
+  transform: rotate(15deg);
+}
+
+.img-l {
+  bottom: 25%;
+  left: -5%;
+  transform: rotate(-10deg);
+}
+
+.img-m {
+  top: 15%;
+  left: 10%;
+  transform: rotate(-5deg);
+}
+
+.img-n {
+  bottom: 40%;
+  right: 20%;
+  transform: rotate(8deg);
+}
+
+.img-o {
+  top: 5%;
+  right: 60%;
+  transform: rotate(20deg);
+}
+
+.img-p {
+  bottom: 35%;
+  left: 80%;
+  transform: rotate(-25deg);
+}
 
 .bg-vignette {
   position: absolute;
@@ -44,7 +157,11 @@
 @media (max-width: 768px) {
   .floating-bg-image {
     transform: scale(0.7);
-    opacity: 0.05; 
+    opacity: 0.05;
+  }
+  
+  /* Reduce density on mobile drastically */
+  .img-e, .img-f, .img-g, .img-h, .img-i, .img-j, .img-k, .img-l, .img-m, .img-n, .img-o, .img-p {
+    display: none;
   }
 }
-

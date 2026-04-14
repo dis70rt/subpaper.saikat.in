@@ -107,6 +107,8 @@
   background: radial-gradient(ellipse at center, rgba(180, 144, 245, 0.15), transparent 70%);
   filter: blur(80px);
   z-index: 0;
+  will-change: transform;
+  transform: translate(-50%, -50%) translateZ(0);
 }
 
 /* ================================= */
@@ -114,12 +116,13 @@
 /* ================================= */
 .iphone-16-pro {
   position: relative;
-  width: 320px;
-  height: 660px;
-  border-radius: 54px;
+  width: 340px;
+  height: 736px;
+  border-radius: 56px;
   z-index: 1;
   transform-style: preserve-3d;
   will-change: transform;
+  transform: translateZ(0);
 }
 
 .iphone-frame {
@@ -127,14 +130,13 @@
   inset: 0;
   background: #000;
   border-radius: inherit;
-  padding: 12px;
-  /* Titanium frame gradients */
-  box-shadow: 
+  padding: 14px;
+  box-shadow:
     inset 0 0 0 2px #444,
     inset 0 0 0 6px #1a1a1c,
-    inset 0 0 10px rgba(255,255,255,0.1),
-    0 40px 80px rgba(0,0,0,0.4),
-    0 0 0 4px #2a2a2d; /* Outer band */
+    inset 0 0 10px rgba(255, 255, 255, 0.1),
+    0 40px 80px rgba(0, 0, 0, 0.4),
+    0 0 0 4px #2a2a2d;
   overflow: hidden;
 }
 
@@ -155,7 +157,9 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  will-change: opacity;
+  will-change: opacity, transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 /* Dynamic Island */
@@ -173,7 +177,7 @@
   align-items: center;
   justify-content: flex-end;
   padding-right: 12px;
-  box-shadow: inset 0 -1px 3px rgba(255,255,255,0.15);
+  box-shadow: inset 0 -1px 3px rgba(255, 255, 255, 0.15);
 }
 
 .camera-lens {
@@ -181,9 +185,10 @@
   height: 12px;
   border-radius: 50%;
   background: #111;
-  box-shadow: inset 0 0 2px rgba(255,255,255,0.2), 0 0 4px rgba(0,0,0,0.8);
+  box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.2), 0 0 4px rgba(0, 0, 0, 0.8);
   position: relative;
 }
+
 .camera-lens::after {
   content: '';
   position: absolute;
@@ -201,75 +206,152 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: linear-gradient(
-    135deg, 
-    rgba(255, 255, 255, 0.15) 0%, 
-    rgba(255, 255, 255, 0) 40%, 
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0) 100%);
   pointer-events: none;
   z-index: 20;
 }
 
-/* Responsive adjustments */
+/* Desktop: Hide dot indicators */
+.features-dots {
+  display: none;
+}
+
+/* ================================= */
+/* MOBILE: Horizontal Sticky Scroll  */
+/* ================================= */
 @media (max-width: 968px) {
-  .features-sticky-grid {
-    display: flex;
-    flex-direction: column;
+
+  /* Normal section height instead of 240vh runway */
+  .features-section {
+    height: 100vh;
     position: relative;
-    padding-bottom: 20vh;
-  }
-  
-  .features-visual {
-    position: sticky;
-    top: 15vh;
-    height: 60vh;
-    width: 100%;
-    z-index: 1; /* Below the text cards */
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-  }
-  
-  .sticky-phone-container {
-    height: 100%;
-    transform: scale(0.85);
-  }
-  
-  .features-content {
-    position: relative;
-    z-index: 2;
-    padding: 0 5%;
-    margin-top: -30vh; /* Allow the first card to drag up nicely */
   }
 
-  .feature-step {
+  /* Sticky viewport container is just full height block */
+  .features-sticky-grid {
+    display: block;
+    position: relative;
     height: 100vh;
-    min-height: auto;
-    justify-content: flex-end; /* Keep scrolling text blocks snapping beautifully over the bottom */
-    padding-bottom: 5vh;
-    padding-right: 0;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
   }
-  
-  /* Wrap the text in a highly frosted glass card so it is legible over the phone */
+
+  /* Phone: absolutely centered behind content */
+  .features-visual {
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 52%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+  }
+
+  .sticky-phone-container {
+    position: relative;
+    height: 100%;
+    transform: scale(0.65);
+  }
+
+  /* Native horizontal scrolling slider */
+  .features-content {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    padding: 0;
+    margin: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: none;
+    transform: none !important; /* Disable framer motion timeline translate */
+    scrollbar-width: none;
+  }
+  .features-content::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Each feature takes exactly one screen width */
+  .feature-step {
+    width: 100vw;
+    height: 100vh;
+    min-height: unset;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 5% 6vh;
+    box-sizing: border-box;
+    scroll-snap-align: center;
+  }
+
+  /* Frosted glass card over the phone */
   .feature-step > div {
-    background: rgba(9, 9, 11, 0.7);
+    background: rgba(9, 9, 11, 0.85);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    padding: 1.5rem 1.25rem;
-    border-radius: 20px;
+    will-change: transform, backdrop-filter;
+    transform: translateZ(0);
+    padding: 1.2rem 1.15rem;
+    border-radius: 18px;
     border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.1);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
-  
+
+  .feature-label {
+    margin-bottom: 0.75rem;
+    padding: 0.35rem 0.8rem;
+    font-size: 0.8rem;
+  }
+
   .feature-step h2 {
-    font-size: 2.3rem;
-    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
     letter-spacing: -0.02em;
+    line-height: 1.15;
   }
-  
+
   .feature-step p {
-    font-size: 1.15rem;
-    line-height: 1.5;
+    font-size: 0.88rem;
+    line-height: 1.45;
+    margin-bottom: 0.65rem;
+    max-width: 100%;
+  }
+
+  .inline-cta {
+    font-size: 0.85rem;
+  }
+
+  /* Show dot indicators on mobile */
+  .features-dots {
+    display: flex;
+    gap: 8px;
+    position: absolute;
+    bottom: 2.5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+  }
+
+  .features-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    transition: opacity 0.3s ease;
   }
 }

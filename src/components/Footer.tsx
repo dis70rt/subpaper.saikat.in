@@ -19,7 +19,7 @@ const Footer = () => {
           <h2>
             <span className="text-gradient">Get the App.</span>
           </h2>
-          <p>Beautiful wallpapers, curated from Reddit — powered by SubPaper.</p>
+          <p>Explore a large collection of stunning wallpapers and give your device a fresh new look anytime.</p>
 
           <div className="footer-cta-buttons">
             <a
@@ -65,7 +65,7 @@ const Footer = () => {
               <img src="/logo.png" alt="SubPaper" />
               SubPaper
             </div>
-            <p>Beautiful wallpapers, curated from Reddit — powered by SubPaper.</p>
+            <p>SubPaper combines "Sub" (community) and "Paper" (wallpaper), reflecting how wallpapers are organized and discovered inside the app.</p>
           </div>
 
           <div className="footer-links-group">
@@ -78,7 +78,7 @@ const Footer = () => {
             </div>
             <div className="footer-links-col">
               <h5>Legal</h5>
-              <a href="#">Privacy Policy</a>
+              <a href="https://sites.google.com/view/subpaper-privacy-policy/home" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
               <a href="#">Terms of Service</a>
             </div>
           </div>
@@ -90,7 +90,7 @@ const Footer = () => {
         ⓒ {new Date().getFullYear()} SubPaper. All Rights Reserved.
       </div>
       <div className="footer-disclaimer">
-        This app is not affiliated with or endorsed by Reddit. Reddit is a trademark of Reddit, Inc.
+        Disclaimer: This app is not affiliated with or endorsed by Reddit. Reddit is a trademark of Reddit, Inc.
       </div>
     </footer>
   );

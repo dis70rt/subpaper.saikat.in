@@ -1,38 +1,38 @@
 import { motion } from 'framer-motion';
-import { EyeOff, DownloadCloud, Search, RefreshCw, Palette, Shield } from 'lucide-react';
+import { EyeOff, DownloadCloud, RefreshCw, Shield, Share2, ImageIcon } from 'lucide-react';
 import { useRef, useEffect } from 'react';
 import '../Details.css';
 
 const detailsData = [
   {
-    icon: <EyeOff size={20} />,
-    title: 'Privacy First',
-    description: 'No registration, no login, no tracking. Just open and explore thousands of premium wallpapers.',
-  },
-  {
-    icon: <DownloadCloud size={20} />,
-    title: 'Offline Ready',
-    description: 'Browse wallpapers you\'ve already viewed even without an internet connection.',
-  },
-  {
-    icon: <Search size={20} />,
-    title: 'Smart Search',
-    description: 'Find the perfect wallpaper using powerful subreddit search and real-time filtering.',
-  },
-  {
-    icon: <RefreshCw size={20} />,
-    title: 'Daily Fresh',
-    description: 'New wallpapers added every day from the most active communities on Reddit.',
-  },
-  {
-    icon: <Palette size={20} />,
-    title: 'Curated Collections',
-    description: 'Hand-picked categories from anime to nature, minimal to abstract — always expanding.',
+    icon: <Share2 size={20} />,
+    title: 'Direct Reddit Preview',
+    description: 'Share any image post from Reddit directly to SubPaper and test it as your wallpaper instantly.',
   },
   {
     icon: <Shield size={20} />,
-    title: 'Zero Battery Drain',
-    description: 'Clean, distraction-free UI designed to be incredibly efficient. No rogue background processes draining your battery.',
+    title: 'Privacy Focused',
+    description: 'Complete anonymity with no registration or login required. We respect your digital footprint.',
+  },
+  {
+    icon: <RefreshCw size={20} />,
+    title: 'Daily 4K Updates',
+    description: 'Fresh 4K-level photos added regularly from the most active communities to keep your device stunning.',
+  },
+  {
+    icon: <DownloadCloud size={20} />,
+    title: 'Native Offline Mode',
+    description: 'Access and view wallpapers you have already browsed even without an internet connection.',
+  },
+  {
+    icon: <ImageIcon size={20} />,
+    title: 'Lossless Resolution',
+    description: 'Our upgraded engine ensures every image is served at the absolute highest available resolution.',
+  },
+  {
+    icon: <EyeOff size={20} />, // Using EyeOff or Palette as a placeholder for Community/Variety
+    title: 'Community Sourced',
+    description: 'Curated from the internet\'s best Subreddits to ensure endless variety and premium quality.',
   }
 ];
 

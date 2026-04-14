@@ -1,6 +1,16 @@
 {
   "version": 1,
   "skills": {
+    "apple-ui-design": {
+      "source": "ComeOnOliver/skillshub",
+      "sourceType": "github",
+      "computedHash": "30e2a14deceef915fad0b7c64446829fe7ebf557bdbc00241ef1b00acc46bd81"
+    },
+    "marketing-mode": {
+      "source": "sundial-org/awesome-openclaw-skills",
+      "sourceType": "github",
+      "computedHash": "1a5a34b72d16855b20f047e2de73229447739c51209932f9764b106bf538de3d"
+    },
     "page-cro": {
       "source": "coreyhaines31/marketingskills",
       "sourceType": "github",
