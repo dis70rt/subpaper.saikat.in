@@ -174,8 +174,8 @@
 
 @media (max-width: 768px) {
   .testimonial-card {
-    min-width: 290px;
-    max-width: 320px;
-    padding: 1.5rem;
+    min-width: 260px;
+    max-width: 300px;
+    padding: 1.25rem;
   }
 }

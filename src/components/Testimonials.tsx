@@ -3,40 +3,34 @@ import '../Testimonials.css';
 
 const testimonialsData = [
   {
-    name: 'Mia Delaney',
-    role: 'Freelance Designer',
-    text: 'SubPaper has completely transformed how I personalize my phone. The 4K resolution images are breathtaking, and the speed is unmatched. No more clunky menus or slow loads.',
-    initials: 'MD'
+    name: 'Devansh Gupta',
+    role: '19 July 2024',
+    text: 'Great app for wallpapers, but the top and new filters show almost the same results.',
+    initials: 'DG'
   },
   {
-    name: 'Zara West',
-    role: 'Content Creator',
-    text: 'I\'ve tried countless wallpaper apps, but SubPaper truly stands out. The intuitive interface makes finding the perfect image effortless. The community-driven content is always fresh.',
-    initials: 'ZW'
+    name: 'Abhay',
+    role: '28 June 2024',
+    text: 'The collections here are pretty dope.',
+    initials: 'A'
   },
   {
-    name: 'Maverick Stone',
-    role: 'Android Developer',
-    text: 'As someone who appreciates fine details, I need a visual experience that is both inspiring and efficient. SubPaper exceeds expectations with its Reddit previews and rock-solid stability.',
-    initials: 'MS'
+    name: 'jhulan sarkar',
+    role: '1 July 2024',
+    text: 'Best🔥👀',
+    initials: 'JS'
   },
   {
-    name: 'Luna Park',
-    role: 'UI Designer',
-    text: 'The curated subreddit collections are genius. I discover new aesthetic wallpapers daily that I\'d never find on my own. This is the wallpaper app Android deserved.',
-    initials: 'LP'
+    name: 'Anirudh',
+    role: '12 August 2024',
+    text: 'super fast and clean, the amoled walls are perfect.',
+    initials: 'A'
   },
   {
-    name: 'Ethan Cole',
-    role: 'Photography Enthusiast',
-    text: 'Finally a wallpaper app that doesn\'t compress images. Every wallpaper looks pixel-perfect on my AMOLED display. The dark UI is a nice touch too.',
-    initials: 'EC'
-  },
-  {
-    name: 'Sophie Tran',
-    role: 'Student',
-    text: 'Lightweight, fast, and perfectly designed. I change my wallpaper every day now. The offline mode is an absolute lifesaver on campus.',
-    initials: 'ST'
+    name: 'Sanchit',
+    role: '5 September 2024',
+    text: 'best app hands down for anime wallpapers zero lag.',
+    initials: 'S'
   }
 ];
 

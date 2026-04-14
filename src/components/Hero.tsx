@@ -70,7 +70,7 @@ const Hero = () => {
           transition={{ delay: 0.55, duration: 0.6 }}
         >
           <span className="hero-trust-stars">★★★★★</span>
-          <span>4.8/5 Rating • Over 50,000+ Downloads</span>
+          <span>4.8/5 Rating • Over 500+ Downloads</span>
         </motion.div>
 
         {/* Stats */}

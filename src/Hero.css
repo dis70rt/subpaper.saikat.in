@@ -130,6 +130,14 @@
   .hero-section {
     padding: 10rem 1.5rem 4rem;
   }
+  .hero-cta {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 2%;
+  }
+  .hero-cta .btn {
+    width: 100%;
+  }
   .hero-stats {
     gap: 2rem;
     flex-wrap: wrap;
