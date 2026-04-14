@@ -31,8 +31,8 @@ const detailsData = [
   },
   {
     icon: <Shield size={20} />,
-    title: 'Lightweight & Fast',
-    description: 'Under 5MB install size. No bloatware, no battery drain. Designed to be incredibly efficient.',
+    title: 'Zero Battery Drain',
+    description: 'Clean, distraction-free UI designed to be incredibly efficient. No rogue background processes draining your battery.',
   }
 ];
 

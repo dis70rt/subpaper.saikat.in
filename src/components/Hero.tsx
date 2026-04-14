@@ -20,7 +20,7 @@ const Hero = () => {
           transition={{ delay: 0.1, duration: 0.6 }}
         >
           <span className="dot" />
-          Now Available on Google Play
+          Voted #1 for Reddit & Anime
         </motion.div>
 
         <motion.h1 
@@ -29,9 +29,9 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.15, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          <span className="text-gradient">Beautiful wallpapers,</span>
+          <span className="text-gradient">Your favorite Reddit wallpapers,</span>
           <br />
-          <span className="text-gradient-accent">delivered instantly.</span>
+          <span className="text-gradient-accent">applied instantly.</span>
         </motion.h1>
         
         <motion.p 
@@ -40,7 +40,7 @@ const Hero = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.35, duration: 0.8 }}
         >
-          Discover stunning 4K Mobile Wallpapers and exclusive Anime Wallpaper collections curated from active Reddit communities.
+          Stop saving images. Start syncing them. SubPaper pulls uncompressed 4K anime & mobile backgrounds straight from top subreddits to your home screen.
         </motion.p>
         
         <motion.div 
@@ -55,7 +55,7 @@ const Hero = () => {
             rel="noopener noreferrer"
             className="btn btn-primary btn-pulse"
           >
-            Google Play Download
+            Download Free on Google Play
           </a>
           <a href="#features" className="btn btn-secondary">
              View Features

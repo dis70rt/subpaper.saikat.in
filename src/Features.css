@@ -1,282 +1,275 @@
-/* ==================== */
-/* FEATURES SECTION     */
-/* ==================== */
+/* ================================= */
+/* FEATURES - iPhone 16 Pro Sticky   */
+/* ================================= */
+
 .features-section {
   position: relative;
-  background: var(--bg-dark);
-  overflow: hidden;
+  background: transparent;
+  width: 100%;
 }
 
-.features-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
-}
-
-/* Feature block – alternating left/right layout */
-.feature-block {
-  display: flex;
-  align-items: center;
-  gap: 3.5rem;
-  max-width: 1200px;
+.features-sticky-grid {
+  display: grid;
+  grid-template-columns: 1fr 450px;
+  max-width: 1050px;
   margin: 0 auto;
-  padding: 4rem 5%;
+  position: relative;
 }
 
-.feature-block.reversed {
-  flex-direction: row-reverse;
+/* Left side: Text Content */
+.features-content {
+  padding: 0 5%;
+  position: relative;
+  z-index: 2;
 }
 
-.feature-text {
-  flex: 1;
-  max-width: 500px;
+.feature-step {
+  height: 100vh;
+  min-height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 2rem;
 }
 
 .feature-label {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--accent);
-  margin-bottom: 1.5rem;
-  padding: 6px 14px;
-  background: rgba(180, 144, 245, 0.06);
-  border: 1px solid rgba(180, 144, 245, 0.1);
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(180, 144, 245, 0.1);
+  border: 1px solid rgba(180, 144, 245, 0.2);
   border-radius: 100px;
-  backdrop-filter: blur(10px);
-}
-
-.feature-label .icon {
-  width: 16px;
-  height: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.feature-text h2 {
-  font-size: clamp(2rem, 4vw, 3.2rem);
-  font-weight: 700;
-  line-height: 1.08;
-  letter-spacing: -0.035em;
-  margin-bottom: 1.5rem;
-}
-
-.feature-text p {
-  font-size: 1.05rem;
-  color: var(--text-secondary);
-  line-height: 1.7;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
   margin-bottom: 2rem;
 }
 
-/* Feature mini cards – Payer glass style */
-.feature-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  margin-top: 1rem;
+.feature-step h2 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  margin-bottom: 1.5rem;
 }
 
-.feature-mini-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  padding: 18px 22px;
-  background: rgba(255, 255, 255, 0.025);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 16px;
-  transition: all 0.4s var(--ease-out-expo);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  position: relative;
-  overflow: hidden;
-}
-
-/* Subtle inner highlight on top edge */
-.feature-mini-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 20%;
-  right: 20%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(180, 144, 245, 0.15), transparent);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.feature-mini-card:hover::before {
-  opacity: 1;
-}
-
-.feature-mini-card:hover {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(180, 144, 245, 0.1);
-  transform: translateX(6px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-}
-
-.feature-mini-card .card-icon {
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  background: rgba(180, 144, 245, 0.08);
-  border: 1px solid rgba(180, 144, 245, 0.12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  color: var(--accent);
-  transition: all 0.3s ease;
-}
-
-.feature-mini-card:hover .card-icon {
-  background: rgba(180, 144, 245, 0.12);
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(180, 144, 245, 0.08);
-}
-
-.feature-mini-card h4 {
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 4px;
-  letter-spacing: -0.01em;
-}
-
-.feature-mini-card p {
-  font-size: 0.82rem;
+.feature-step p {
+  font-size: 1.25rem;
   color: var(--text-secondary);
-  line-height: 1.5;
-  margin-bottom: 0;
+  line-height: 1.6;
+  max-width: 480px;
+  margin-bottom: 1.5rem;
 }
 
-/* Feature phone mockup */
-.feature-visual {
-  flex: 1;
+.inline-cta {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  padding-bottom: 2px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.inline-cta:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  transform: translateX(4px);
+}
+
+/* Right side: Sticky Mockup */
+.features-visual {
+  position: relative;
+  height: 100%;
+}
+
+.sticky-phone-container {
+  position: sticky;
+  top: 0;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  perspective: 1000px;
+  perspective: 1200px;
 }
 
-.feature-phone-wrapper {
-  width: 280px;
-  height: 580px;
-  position: relative;
-  transform-style: preserve-3d;
-}
-
-.feature-phone-frame {
-  width: 100%;
-  height: 100%;
-  border-radius: 40px;
-  background: #111;
-  border: 2.5px solid rgba(255, 255, 255, 0.08);
-  padding: 8px;
-  box-shadow: 
-    inset 0 1px 0 rgba(255, 255, 255, 0.1),
-    0 0 0 1px rgba(255, 255, 255, 0.02),
-    0 25px 60px rgba(0, 0, 0, 0.5),
-    0 0 100px rgba(180, 144, 245, 0.04);
-  overflow: hidden;
-  position: relative;
-}
-
-/* Glare effect on phone */
-.feature-phone-frame::after {
-  content: '';
+/* Base Ambient Glow behind phone */
+.phone-ambient-glow {
   position: absolute;
-  top: -20%;
-  left: -80%;
-  width: 60%;
-  height: 200%;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.03) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  transform: rotate(25deg);
-  pointer-events: none;
-  z-index: 10;
-}
-
-.feature-phone-screen {
-  width: 100%;
-  height: 100%;
-  border-radius: 34px;
-  overflow: hidden;
-  background: #0a0a0a;
-}
-
-.feature-phone-screen img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s var(--ease-out-expo);
-}
-
-.feature-phone-frame:hover .feature-phone-screen img {
-  transform: scale(1.02);
-}
-
-/* Glow behind phone */
-.feature-phone-glow {
-  position: absolute;
-  width: 350px;
-  height: 350px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(180, 144, 245, 0.06), transparent 60%);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 100%;
+  height: 60%;
+  background: radial-gradient(ellipse at center, rgba(180, 144, 245, 0.15), transparent 70%);
+  filter: blur(80px);
+  z-index: 0;
+}
+
+/* ================================= */
+/* IPHONE 16 PRO CSS MOCKUP          */
+/* ================================= */
+.iphone-16-pro {
+  position: relative;
+  width: 320px;
+  height: 660px;
+  border-radius: 54px;
+  z-index: 1;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.iphone-frame {
+  position: absolute;
+  inset: 0;
+  background: #000;
+  border-radius: inherit;
+  padding: 12px;
+  /* Titanium frame gradients */
+  box-shadow: 
+    inset 0 0 0 2px #444,
+    inset 0 0 0 6px #1a1a1c,
+    inset 0 0 10px rgba(255,255,255,0.1),
+    0 40px 80px rgba(0,0,0,0.4),
+    0 0 0 4px #2a2a2d; /* Outer band */
+  overflow: hidden;
+}
+
+.iphone-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 42px;
+  background: #09090b;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.screen-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: opacity;
+}
+
+/* Dynamic Island */
+.dynamic-island {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110px;
+  height: 32px;
+  background: #000;
+  border-radius: 20px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 12px;
+  box-shadow: inset 0 -1px 3px rgba(255,255,255,0.15);
+}
+
+.camera-lens {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #111;
+  box-shadow: inset 0 0 2px rgba(255,255,255,0.2), 0 0 4px rgba(0,0,0,0.8);
+  position: relative;
+}
+.camera-lens::after {
+  content: '';
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  width: 4px;
+  height: 4px;
+  background: rgba(180, 144, 245, 0.4);
+  border-radius: 50%;
+  filter: blur(1px);
+}
+
+/* Glass Glare Overlay */
+.iphone-glare {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg, 
+    rgba(255, 255, 255, 0.15) 0%, 
+    rgba(255, 255, 255, 0) 40%, 
+    rgba(255, 255, 255, 0) 100%
+  );
   pointer-events: none;
-  z-index: -1;
-  animation: phone-glow-pulse 4s ease-in-out infinite;
+  z-index: 20;
 }
 
-@keyframes phone-glow-pulse {
-  0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
-  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
-}
+/* Responsive adjustments */
+@media (max-width: 968px) {
+  .features-sticky-grid {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-bottom: 20vh;
+  }
+  
+  .features-visual {
+    position: sticky;
+    top: 15vh;
+    height: 60vh;
+    width: 100%;
+    z-index: 1; /* Below the text cards */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .sticky-phone-container {
+    height: 100%;
+    transform: scale(0.85);
+  }
+  
+  .features-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 5%;
+    margin-top: -30vh; /* Allow the first card to drag up nicely */
+  }
 
-/* Divider between feature blocks */
-.feature-divider {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 5%;
-}
-
-.feature-divider .line {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--border-subtle), transparent);
-}
-
-@media (max-width: 1024px) {
-  .feature-block {
-    flex-direction: column !important;
-    gap: 3rem;
-    padding: 5rem 5%;
+  .feature-step {
+    height: 100vh;
     min-height: auto;
-    text-align: center;
+    justify-content: flex-end; /* Keep scrolling text blocks snapping beautifully over the bottom */
+    padding-bottom: 5vh;
+    padding-right: 0;
   }
-  .feature-text {
-    max-width: 600px;
+  
+  /* Wrap the text in a highly frosted glass card so it is legible over the phone */
+  .feature-step > div {
+    background: rgba(9, 9, 11, 0.7);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    padding: 2.5rem 2rem;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.1);
   }
-  .feature-label {
-    margin-left: auto;
-    margin-right: auto;
+  
+  .feature-step h2 {
+    font-size: 2.3rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
   }
-  .feature-phone-wrapper {
-    width: 240px;
-    height: 500px;
+  
+  .feature-step p {
+    font-size: 1.15rem;
+    line-height: 1.5;
   }
 }
